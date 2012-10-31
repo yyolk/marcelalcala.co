@@ -1,0 +1,459 @@
+
+// This import applies a global reset to any page that imports this stylesheet.
+//@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+//@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+//@import "blueprint";
+
+@import "compass/reset";
+@import "compass/css3";
+//@import "compass/css3/background-clip";
+
+@import "compass/layout/stretching";
+//@import "compass/css3/images";
+
+@import "compass/utilities/general/min";
+
+//@import "compass/css3/text-shadow";
+
+//@import "compass/css3/box-shadow";
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+
+@import "blueprint/typography";
+
+@include blueprint-typography;
+
+
+
+// fonts
+
+//@include font-face("Josefin_Slab", font-files("Josefin_Slab/JosefinSlab-SemiBoldItalic.ttf", truetype));
+
+@include font-face("Allan", font-files("Allan/Allan-Bold.ttf", truetype));
+
+
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+$img-bg: rgba(197, 204, 202, 0.7);
+$bfpink: rgba(184, 65, 175, 0.71);
+
+//@import "partials/keyframes";
+
+//keyframe animations
+//@mixin keyframes($name) {
+//@-webkit-keyframes #{$name} { 
+@-webkit-keyframes move { 
+    0%   { 
+        background-position: 1000px -1000px;
+    }
+    25% {
+        background-position: 500px -500px;
+    }
+    50% { 
+        background-position: -1000px 1000px;
+    }
+    75% {
+        background-position: -500px 500px;
+    }
+    100% {
+        background-position: 1000px -1000px;
+    }
+}
+@-moz-keyframes move {
+    from {
+        background-position: -100px 200px;
+    }
+
+    to {
+        background-position: -200px 100px;
+    }
+}
+
+
+//@include keyframes("move");
+
+//@-webkit-keyframes move { 
+//    $trans: unquote("");
+//    
+//    0%   { 
+//        background-position: 1000px -1000px;
+//    }
+//    
+//    25% {
+//        background-position: 500px -500px
+//    } 
+//    50% {
+//        background-position: 0 0;
+//    }
+//    75% {
+//        background-position: 500px -500px;
+//    }
+//
+//    100% { 
+//        background-position: 1000px -1000px;
+//    }
+//}
+
+
+
+
+
+// @mixin keyframe{
+//     @include keyframes("move") 
+//     0%   { background-position: 100px 20px; }
+//     //40% { background-position: -150px -200px; }
+//     100% { background-position: 20px 100px; }
+// }
+
+
+//@mixin translate(-100px, -20px);
+
+//@-webkit-keyframes move {
+//  0%   { background-position: 0 0; }
+//  20%   { background-position: -2500px -2500px; }
+//  40% { background-position: 5000px -5000px; }
+//  60% { background-position: -2500px 2500px; }
+//  80% { background-position: 0 5000px; }
+//  100% { background-position: -2500px 2500px; }
+//}
+
+//hot pink text highlight
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+
+
+body {
+
+    // Page layout can be done using mixins applied to your semantic classes and IDs:
+    //background: url("../img/bseamless.jpg") no-repeat center center fixed;
+    //  @include background-size(100% auto);
+    //background-image: url("../img/bgnoise_lg.png"); 
+
+    background-image: url("../img/light_checkered_tiles.png");
+    background-repeat: repeat;
+    @include background-size(auto);
+
+    -webkit-animation-name: move;
+    -webkit-animation-duration: 400s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transition-timing-function: ease;
+
+    -moz-animation-name: move;
+    -moz-animation-duration: 400s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease;
+
+
+}
+
+#navbar{
+    width: 100%;
+    margin-top:50%;
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-align(stretch);
+    height:200px;
+    cursor:pointer;
+    .button1, .button2, .button3, .button4, .button5, .button6{
+
+        @include box-flex(1);
+        background-color: rgba(#300, 0.7);
+        @include min-width(50px);
+
+        z-index:5;
+@include single-box-shadow(rgba(#111, 0.8), 1px,1px, 3px, 1px);
+        margin:30px;
+        background-position: 50% 50%;
+        background-size: cover;
+        &:hover {
+            background-color: rgba(#030, 0.9);
+        }   
+    }
+
+    .button1{ 
+        background-image: url("../img/symbols/performance_installations.jpg");
+    }
+    .button2{
+        background-image: url("../img/symbols/works.jpg");
+    }
+    .button3{
+        background-image: url("../img/symbols/megamall.jpg");
+    }
+    .button4{
+        background-image: url("../img/symbols/tumblr.jpg");
+    }
+    .button5{
+        background-image: url("../img/symbols/events.jpg");
+    }
+    .button6{
+        background-image: url("../img/symbols/resume.jpg");
+    }
+
+
+
+}
+
+#marcel {
+
+    // position
+    //  position: fixed;
+
+    @include stretch(10%, 30%, 90%, 30%);
+    text-align:center;
+
+    // top:40%;
+
+
+
+    #name {
+        z-index:-5;
+        
+        //@include stretch(40px, 40px, 40px, 40px);
+
+        width:500px;
+        margin:0 auto;
+
+        h1{ 
+        color:#e3e3e3;
+        font-size:80px;
+        }
+        $box-bg: darken(rgba(250, 245, 255, 0.2), 30%); 
+        background: transparentize($box-bg, 0.6);
+
+        //@include border-radius(3px);
+
+        @include inline-block;
+        //border: 3px solid darken(rgba(250, 245, 255, 0.5), 0.1);
+
+        //         padding: 8px (18px * 4);
+        //        margin: 0;
+        //        line-height: 1.7;
+        //
+        //font-family: "Josefin_Slab", arial, serif;
+        font-family: "Allan", arial, serif;
+
+        font-size: 400%;
+        color: rgba(250, 250, 251, 0.58);
+        @include text-shadow(
+        rgba(0,0,0, 1) 0 0 4px,
+        rgba(20, 30, 10, 0.8) 0 0 2px,
+        rgba(245, 245, 248, 0.3) 0 0 15px,
+        rgba(0, 0, 0, 0.9) 3px 3px 12px
+        );
+
+        &:hover h1 {
+            //background-color: rgba(#999, 0.15);
+            cursor:pointer;
+            @include transition-duration(0.1s);
+            @include transition-property(all);
+            @include text-shadow(
+            rgba(245, 245, 245, 0.9) 0 0 20px,
+            rgba(100, 100, 100, 0.8) 0 0 10px,
+            rgba(0,0,0,1) 0 0 30px
+            );
+
+            //border:3px solid lighten($box-bg, 70%);
+        }
+
+
+
+    }
+
+
+
+    z-index:22;
+
+
+}
+
+#name:hover  {
+    .floatbox{
+
+        background-color: #fff !important;
+        background-image:none;
+    }
+}
+
+
+
+
+
+#entanglement {
+    //@include border-radius(20px, -10px);
+    //@include border-radius(12px);
+
+    @include inline-block;
+    @include background-clip(padding-box);
+    //padding:50px;
+    @include stretch;
+    //    height:100%;
+    //border: 20px solid transparentize(darken(rgba($img-bg, 0.4), 40%), .1);
+
+    $biwidth: image-width("butterfly5.jpg");
+    $biheight: image-height("butterfly5.jpg");
+
+    #afc{
+        margin-top:20px;
+        text-align:center;
+        h1{
+
+            @include inline-block;
+            font-size:50px;
+            letter-spacing: 1.2;
+            font-weight: bold;
+        }
+        a{
+            text-decoration:none;
+            font-size:16px;
+        }
+
+        .video{
+            width:853px;
+            margin:0 auto;
+            padding:0;
+            @include single-box-shadow(rgba(12,12,12, 0.4), 0, 0, 10px);
+        }
+        
+    }
+
+    #centerblock {
+        height:760px;
+        //@extend #entanglement;
+        //background-color: rgba(desaturate($img-bg, 80%), .2);
+
+        //border: 15px solid transparentize(darken(rgba($img-bg, 0.4), 40%), .1);
+
+        //@include stretch(15px, 15px, 15px, 15px);
+        //        @include background-clip(border-box);
+
+        padding: 20px;
+
+        //      @include background-image(
+        //        radial-gradient(50% 50%, rgba(#fff, 0) 600px, darken(rgba($img-bg, 0.5), 66%) 900px));
+
+        //  background-color: rgba($bfpink,0.15); 
+        
+        margin:0 auto;
+        width:960px;
+
+
+         
+        #butterfly {
+
+            //margin: 0 auto;
+            //@extend #centerblock;
+
+
+            //@include stretch($biheight/12, $biwidth/ 2, $biheight/6, $biwidth/2);
+
+            // border radius
+            //    border: 3px solid darken($img-bg, 40%);
+            //    @include border-radius(6px);
+
+            //border: 20px solid rgba(249, 249, 248, 0.79);
+
+            // border: 10px solid transparentize(darken(rgba($img-bg, 0.4), 60%), .2);
+
+            // background-color: rgba(desaturate($bfpink, 80%), 0.2);
+ 
+            #emailme{
+                a {
+                    padding:10px;
+                    display: block;
+                    float:left;
+
+                }
+//            visibility:hidden;
+            padding:0;margin:0;
+            position:absolute;
+            //visibility:hidden;
+            background-color:white;
+            font-family: "Helvetica Neue", Arial, serif;
+            @include min-width(960px);
+            width:960px;
+            overflow:hidden;
+            height:700px;
+            z-index:99;
+            .fransletter{
+                text-align:left;
+                clear:both;
+                width:500px;
+                margin:0 auto;
+                height:80%;
+                line-height:1.2;
+                font-size:12px;
+                padding:10px;
+                overflow:scroll;
+
+            }
+
+            .eff{
+                float:right;
+            }
+            .closeme{
+                width:20px;
+                height:20px;
+                font-family:mono;
+                font-size:13px;
+                color:#000;
+                text-decoration:none;
+                border:4px solid #000;
+                padding:4px;
+                right:0;
+                position:absolute;
+                z-index:10;
+                cursor:pointer;
+
+            }
+        }  
+
+            .floatbox {
+  
+             
+                @include border-radius(10px);
+                background-image: url("../img/butterfly.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 50% 50% ;
+
+                //width: 500px;
+                @include min-width(960px);
+                //height: $biheight;
+                //@include min-height($biheight);
+
+                overflow:hidden;
+                text-align:center;
+                //margin:0 auto;
+                @include inline-block;
+                //@include stretch;
+
+                //@include single-box-shadow(rgba(#111, 0.6), 5px, 5px, 8px, 3px);
+                @include single-box-shadow(rgba(#111, 0.6), 1px, 1px, 2px, 1px, inset);
+                //@include box-shadow(rgba(#111, 0.6) 5px 5px 8px 1px, rgba($img-bg, 0.6) 0 0 8px 3px);
+            
+
+            }
+
+        }
+
+    }
+
+
+
+}
+
+
+
+//#entanglement{ @include border-radius(8px); }
+//#centerblock { @include border-radius(6px); }
+//#butterfly { @include border-radius(3px); }
+
+
+

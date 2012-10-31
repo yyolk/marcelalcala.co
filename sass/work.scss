@@ -1,0 +1,148 @@
+
+@import "compass/reset";
+@import "compass/layout/stretching";
+@import "compass/css3";
+//#i1 { 
+//    width:100%;
+//    height:100%;
+//    position:absolute;
+//    min-height:100%;
+//    min-width:100%;
+//}
+//@for $i from 1 through 14 {
+//    #i#{$i} {
+//        left: #{$i}00%;
+//        width: 100%;
+//        margin-right:0;
+//        height:100%;
+//        position:absolute;
+//        min-height:100%;
+//        min-width:100%;
+//
+//    }
+//    
+//    #a#{$i}:target {
+//
+//        -webkit-transform: translateX(-#{$i}00%);
+//        -moz-transform: translateX(-#{$i}00%);
+//        		-moz-transition: all 0.2s; 
+//		-webkit-transition: all 0.2s; 
+//		-o-transition: all 0.2s; 
+//		transition: all 0.2s; 
+//    }
+//    
+//
+//
+//}
+//
+//
+//body{
+//
+//    overflow:hidden;
+//}
+//
+//.page {
+//    position:absolute;
+//    height:100%;
+//    width:100%;
+//    min-width:100%;
+//    min-height:100%;
+//    -webkit-transition: -webkit-transform 0.8s;
+//    -moz-transition: -moz-transform 0.8s;
+//    -o-transition: -o-transform 0.8s;
+//}
+//
+//
+//.nextbutton, .backbutton{
+//    height:100%;
+//    top:0;
+//    width:50%;
+//    position:fixed;
+//    z-index:99;
+//
+//
+//}
+//
+//.backbutton {
+//    left:0;
+//}
+//
+//.nextbutton {
+//    right:0;
+//}
+//
+//#i1{
+//    background-image: url("../img/Stacey/stacey_b.jpg");
+//}
+//#i2{
+//    background-image: url("../img/Stacey/stacey_c.jpg");
+//}
+//#i3{
+//    background-image: url("../img/Stacey/stacey_d.jpg");
+//}
+//#i4{
+//    background-image: url("../img/Stacey/stacey_e.jpg");
+//}
+//#i5{
+//    background-image: url("../img/Stacey/stacey_f.jpg");
+//}
+//#i6{
+//    background-image: url("../img/Stacey/stacey_g.jpg");
+//}
+//#i7{
+//    background-image: url("../img/Stacey/stacey_h.jpg");
+//}
+//#i8{
+//    background-image: url("../img/Stacey/stacey_i.jpg");
+//}
+//#i9{
+//    background-image: url("../img/Stacey/stacey_j.jpg");
+//}
+//#i10{
+//    background-image: url("../img/Stacey/stacey_k.jpg");
+//}
+//#i11{
+//    background-image: url("../img/Stacey/stacey_m.jpg");
+//}
+//#i12{
+//    background-image: url("../img/Stacey/stacey_n.jpg");
+//}
+//#i13{
+//    background-image: url("../img/Stacey/stacey_o.jpg");
+//}
+//#i14{
+//    background-image: url("../img/Stacey/stacey_p.jpg");
+//}
+
+
+#container{
+    @include stretch;
+    overflow:hidden;
+}
+.imgbox{ 
+    background-color: #000;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height:100%;
+    @include opacity(0.8);
+    
+    &:hover {
+        @include opacity(1);
+    }
+}
+
+.selected .imgbox:hover {
+    @include opacity(1);
+}
+
+
+
+.selected{
+    left:0;
+}
+
+.masoned{
+    overflow:hidden;
+}
+
+

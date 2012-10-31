@@ -1,0 +1,15 @@
+!!! 5
+
+%html
+  %head
+    %title &hearts; Marcelle Alcal&acute; &hearts;
+    %link{"rel" => "stylesheet", "href" => "css/work.css", "type" => "text/css"}
+    %script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "http://static.tumblr.com/evkxbgq/XPYlj04zq/jquery.masonry.js"}
+    %script{:type => "text/javascript", :src => "js/work.js", :defer => true}
+
+  %body
+    #container
+      - ('b'..'p').each do |i|
+        %img{:src => "img/Stacey/stacey_#{i}.jpg"}
+

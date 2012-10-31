@@ -1,0 +1,19 @@
+// Mixins --------------------------------------------------------------
+
+=keyframes($name)
+  @-moz-keyframes #{$name}
+    @children
+  @-webkit-keyframes #{$name}
+    @children
+  @keyframes #{$name}
+    @children
+
+=animation-timing-function($function)
+  -moz-animation-timing-function: $function
+  -webkit-animation-timing-function: $function
+  animation-timing-function: $function
+
+
+
+///////////////
+
